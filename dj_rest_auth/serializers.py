@@ -17,6 +17,8 @@ from .models import TokenModel
 UserModel = get_user_model()
 
 
+# Login serializers 
+
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(required=False, allow_blank=True)
     email = serializers.EmailField(required=False, allow_blank=True)
