@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.urls import path
 
+app_name = "djrest_api"
+
 from dj_rest_auth.views import (
     LoginView, LogoutView, PasswordChangeView, PasswordResetConfirmView,
     PasswordResetView, UserDetailsView,
