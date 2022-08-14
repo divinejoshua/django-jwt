@@ -22,7 +22,7 @@ class check_user(APIView):
         # try:
         print(request.user)
         if Account.objects.filter(email=request.user).exists() == True:
-            account = Account.objects.filter(email=request.user)
+            account = Account.objects.get(email=request.user)
             result = True
             data["username"]     = account.username
             data["email"]     = account.email

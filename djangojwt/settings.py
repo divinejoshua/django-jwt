@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,11 +88,6 @@ DATABASES = {
 }
 
 
-# JWT settings 
-REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'jwt-auth'
-
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
@@ -101,6 +97,19 @@ REST_FRAMEWORK = {
       'rest_framework.renderers.JSONRenderer',   #This is to remove the usual django render template 
       ]
 }
+
+
+
+# JWT settings 
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'jwt-auth'
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=3),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=180),
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
