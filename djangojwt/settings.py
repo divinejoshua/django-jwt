@@ -91,6 +91,17 @@ DATABASES = {
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'jwt-auth'
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+      'DEFAULT_RENDERER_CLASSES': [
+      'rest_framework.renderers.JSONRenderer',   #This is to remove the usual django render template 
+      ]
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
