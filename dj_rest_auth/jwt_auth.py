@@ -71,7 +71,6 @@ class CookieTokenRefreshSerializer(TokenRefreshSerializer):
             return request.data['refresh']
         cookie_name = getattr(settings, 'JWT_AUTH_REFRESH_COOKIE', None)
         if cookie_name and cookie_name in request.COOKIES:
-            print(request.COOKIES.get(cookie_name))
             return request.COOKIES.get(cookie_name)
         else:
             from rest_framework_simplejwt.exceptions import InvalidToken
