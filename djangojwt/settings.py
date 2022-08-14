@@ -87,6 +87,10 @@ DATABASES = {
 }
 
 
+# JWT settings 
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'jwt-auth'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
