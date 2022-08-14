@@ -11,18 +11,24 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 
+# Get user details 
 class check_user(APIView):
-    def get(self,request,user):
+    permission_classes = [IsAuthenticated]
+
+
+
+    def get(self,request):
         data ={}
-        try:
-            if Account.objects.filter(Q(username=user)|Q(email=user)).exists() == True:
-                account = Account.objects.get(Q(username=user)|Q(email=user))
-                result = True
-                data["username"]     = account.username
-                data["email"]     = account.email
-            else:
-                result = False
-            data["result"]     = result
-        except:
-            data["Error"]     = "Sorry something when wrong"
+        # try:
+        print(request.user)
+        if Account.objects.filter(email=request.user).exists() == True:
+            account = Account.objects.filter(email=request.user)
+            result = True
+            data["username"]     = account.username
+            data["email"]     = account.email
+        else:
+            result = False
+        data["result"]     = result
+        # except:
+        #     data["Error"]     = "Sorry something when wrong"
         return Response(data=data)
