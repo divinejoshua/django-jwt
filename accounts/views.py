@@ -31,3 +31,9 @@ class check_user(APIView):
         # except:
         #     data["Error"]     = "Sorry something when wrong"
         return Response(data=data)
+
+    def post(self,request):
+        data ={}
+        # except:
+        #     data["Error"]     = "Sorry something when wrong"
+        return Response(data=data)
