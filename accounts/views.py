@@ -20,7 +20,6 @@ class check_user(APIView):
     def get(self,request):
         data ={}
         # try:
-        print(request.user)
         if Account.objects.filter(email=request.user).exists() == True:
             account = Account.objects.get(email=request.user)
             result = True
