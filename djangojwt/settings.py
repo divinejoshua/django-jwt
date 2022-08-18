@@ -103,7 +103,7 @@ REST_FRAMEWORK = {
 # JWT settings 
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'jwt-auth'
-JWT_AUTH_HTTPONLY = False
+JWT_AUTH_HTTPONLY = False 
 JWT_AUTH_REFRESH_COOKIE = 'jwt-refresh-token'
 
 SIMPLE_JWT = {
