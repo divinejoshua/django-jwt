@@ -114,6 +114,9 @@ SIMPLE_JWT = {
 }
 
 
+# CORS Origin 
+CORS_ALLOW_ALL_ORIGINS  = True
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
