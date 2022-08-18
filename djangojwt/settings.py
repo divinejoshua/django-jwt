@@ -104,9 +104,9 @@ REST_FRAMEWORK = {
 
 # JWT settings 
 REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'jwt-auth'
-JWT_AUTH_HTTPONLY = False 
-JWT_AUTH_REFRESH_COOKIE = 'jwt-refresh-token'
+# JWT_AUTH_COOKIE = 'jwt-auth'
+# JWT_AUTH_HTTPONLY = True 
+# JWT_AUTH_REFRESH_COOKIE = 'jwt-refresh-token'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=3),
@@ -116,6 +116,7 @@ SIMPLE_JWT = {
 
 # CORS Origin 
 CORS_ALLOW_ALL_ORIGINS  = True
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
