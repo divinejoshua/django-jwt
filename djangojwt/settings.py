@@ -104,9 +104,9 @@ REST_FRAMEWORK = {
 
 # JWT settings 
 REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'jwt-auth'
-JWT_AUTH_HTTPONLY = True 
-JWT_AUTH_REFRESH_COOKIE = 'jwt-refresh-token'
+# JWT_AUTH_COOKIE = 'jwt-auth'
+# JWT_AUTH_HTTPONLY = True 
+# JWT_AUTH_REFRESH_COOKIE = 'jwt-refresh-token'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
@@ -114,8 +114,10 @@ SIMPLE_JWT = {
 }
 
 
-# CORS Origin 
+# CORS  
 CORS_ALLOW_ALL_ORIGINS  = True
+CORS_ALLOW_CREDENTIALS = True
+
 
 
 # Password validation
