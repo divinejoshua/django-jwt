@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'accounts.Account'
 
+APPEND_SLASH = False
+
 # Application definition
 
 INSTALLED_APPS = [
