@@ -34,6 +34,6 @@ class check_user(APIView):
 
     def post(self,request):
         data ={}
-        # except:
-        #     data["Error"]     = "Sorry something when wrong"
+        data["success"]     = "Added successfully"
         return Response(data=data)
+
