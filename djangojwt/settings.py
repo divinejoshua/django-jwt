@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY', cast=str)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=str)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=list)
 
 AUTH_USER_MODEL = 'accounts.Account'
 
@@ -96,8 +96,12 @@ DATABASES = {
 }
 
 # Database setup 
-database_url = config('DATABASE_URL', cast=str)
-DATABASES["default"] = dj_database_url.parse(database_url)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+
+# database_url = config('DATABASE_URL', cast=str)
+# DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 # Rest framework 
