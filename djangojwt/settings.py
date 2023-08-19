@@ -95,10 +95,12 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# Database setup 
+database_url = config('DATABASE_URL', cast=str)
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
+# Rest framework 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
