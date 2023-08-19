@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY', cast=str)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ["django-jwt.onrender.com",'localhost:8000', '127.0.0.1:8000']
+ALLOWED_HOSTS = ["django-jwt.onrender.com","localhost", "127.0.0.1"]
 
 AUTH_USER_MODEL = 'accounts.Account'
 
@@ -100,6 +100,7 @@ db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
 
+# Direct to Database URI 
 # database_url = config('DATABASE_URL', cast=str)
 # DATABASES["default"] = dj_database_url.parse(database_url)
 
