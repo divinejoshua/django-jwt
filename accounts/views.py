@@ -35,5 +35,6 @@ class check_user(APIView):
     def post(self,request):
         data ={}
         data["success"]     = "Added successfully"
+        print(request.META.get("HTTP_USER_AGENT"))
         return Response(data=data)
 
